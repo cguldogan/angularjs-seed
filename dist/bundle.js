@@ -68,10 +68,37 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var angular = __webpack_require__(1);
-
-
 __webpack_require__(3);
+
 __webpack_require__(5);
+
+// http://clintberry.com/2013/modular-angularjs-application-design/
+
+// Define all your modules with no dependencies
+// angular.module('BirthdayApp', []);
+// angular.module('CollectionApp', []);
+// angular.module('DashboardApp', []);
+// angular.module('LoginApp', []);
+// angular.module('MessageApp', []);
+// angular.module('PatientApp', []);
+// angular.module('PhoneApp', []);
+// angular.module('ReportsApp', []);
+
+
+// Lastly, define your "main" module and inject all other modules as dependencies
+// angular.module('MainApp',
+// [
+//   'BirthdayApp',
+//   'CollectionApp',
+//   'DashboardApp',
+//   'LoginApp',
+//   'MessageApp',
+//   'PatientApp',
+//   'PhoneApp',
+//   'ReportsApp',
+//   'templates-main',
+// ]
+// );
 
 angular.module('myApp', [
     'ngRoute',
@@ -79,7 +106,6 @@ angular.module('myApp', [
   ]).
   config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
-  
     $routeProvider.otherwise({redirectTo: '/view1'});
   }]);
 
@@ -35242,9 +35268,9 @@ angular.module('myApp.view1', ['ngRoute'])
     controller: 'View1Ctrl'
   });
 }])
-
-.controller('View1Ctrl', [function() {
-
+.controller('View1Ctrl',['$scope',function($scope) {
+  var vm = $scope;
+  vm.myName = 'Test';
 }]);
 
 /***/ })
