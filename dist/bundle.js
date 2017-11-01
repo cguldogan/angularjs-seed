@@ -69,8 +69,8 @@
 
 var angular = __webpack_require__(1);
 __webpack_require__(3);
-
 __webpack_require__(5);
+
 
 // http://clintberry.com/2013/modular-angularjs-application-design/
 
@@ -101,13 +101,12 @@ __webpack_require__(5);
 // );
 
 angular.module('myApp', [
-    'ngRoute',
-    'myApp.view1'
-  ]).
-  config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix('!');
-    $routeProvider.otherwise({redirectTo: '/view1'});
-  }]);
+  'ngRoute',
+  'myApp.view1'
+]);
+
+
+__webpack_require__(6);
 
 /***/ }),
 /* 1 */
@@ -35272,6 +35271,28 @@ angular.module('myApp.view1', ['ngRoute'])
   var vm = $scope;
   vm.myName = 'Test';
 }]);
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+// angular.module('myApp').
+// config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+//     $routeProvider.when({
+//         redirectTo: '/view1'
+//     });
+// }]);
+
+
+angular.module('myApp')
+.config(
+  ['$routeProvider',
+    function($routeProvider) {
+      $routeProvider
+        .when('/', {
+          templateUrl: '../src/view1/view1.html',
+          action: 'myApp.view1.View1Ctrl'
+        })}])
 
 /***/ })
 /******/ ]);
