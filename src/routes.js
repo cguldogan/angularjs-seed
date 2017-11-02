@@ -1,12 +1,12 @@
-angular.module('myApp')
+angular.module('App')
   .config(
     ['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', {
-        templateUrl: '../src/view1/view1.html',
-        controller: 'View1Ctrl',
+        templateUrl: '../src/home/home.html',
+        controller: 'ctrl'
       })
       .when('/view1',{
-        templateUrl: '../src/view1/view1.html',
-        controller: 'View1Ctrl',
+        templateUrl: '../src/home/home.html',
+        controller: 'ctrl'
       })
     }])
