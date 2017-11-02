@@ -35260,13 +35260,7 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 "use strict";
 
 
-angular.module('myApp.view1', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: '../src/view1/view1.html',
-    controller: 'View1Ctrl'
-  });
-}])
+angular.module('myApp.view1', [])
 .controller('View1Ctrl',['$scope',function($scope) {
   var vm = $scope;
   vm.myName = 'Test';
@@ -35276,23 +35270,18 @@ angular.module('myApp.view1', ['ngRoute'])
 /* 6 */
 /***/ (function(module, exports) {
 
-// angular.module('myApp').
-// config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-//     $routeProvider.when({
-//         redirectTo: '/view1'
-//     });
-// }]);
-
-
 angular.module('myApp')
-.config(
-  ['$routeProvider',
-    function($routeProvider) {
-      $routeProvider
-        .when('/', {
-          templateUrl: '../src/view1/view1.html',
-          action: 'myApp.view1.View1Ctrl'
-        })}])
+  .config(
+    ['$routeProvider', function ($routeProvider) {
+      $routeProvider.when('/', {
+        templateUrl: '../src/view1/view1.html',
+        controller: 'View1Ctrl',
+      })
+      .when('/view1',{
+        templateUrl: '../src/view1/view1.html',
+        controller: 'View1Ctrl',
+      })
+    }])
 
 /***/ })
 /******/ ]);
