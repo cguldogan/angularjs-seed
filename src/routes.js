@@ -9,7 +9,7 @@ var routeConfig = angular.module('App').config(
       .when('/view1',{
         templateUrl: '../src/home/index.html',
         controller: 'homeController'
-      })
-    }])
+      });
+    }]);
 
 module.exports = routeConfig;
