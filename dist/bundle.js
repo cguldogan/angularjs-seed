@@ -76,12 +76,16 @@ var route = __webpack_require__(3);
 //Loader
 __webpack_require__(5);
 
+
 var app = angular.module('App', [
   'ngRoute',
   'home'
 ]);
 
-__webpack_require__(6);
+__webpack_require__(7);
+
+module.exports = app;
+
 
 /***/ }),
 /* 1 */
@@ -35234,30 +35238,48 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 "use strict";
 
+var homeController  = __webpack_require__(6);
 
+var homeModule = angular.module('home',[])
+.controller('homeController',['$scope',homeController]);
 
-angular.module('home',[])
-.controller('ctrl',['$scope',function($scope) {
-  var vm = $scope;
-  vm.myName = 'ctrl';
-}]);
+module.exports = homeModule;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-angular.module('App')
-  .config(
+"use strict";
+
+
+
+function homeController($scope) {
+    var vm = $scope;
+    vm.myName = 'homeController';
+}
+
+module.exports = homeController;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var routeConfig = angular.module('App').config(
     ['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', {
-        templateUrl: '../src/home/home.html',
-        controller: 'ctrl'
+        templateUrl: '../src/home/index.html',
+        controller: 'homeController'
       })
       .when('/view1',{
-        templateUrl: '../src/home/home.html',
-        controller: 'ctrl'
+        templateUrl: '../src/home/index.html',
+        controller: 'homeController'
       })
     }])
+
+module.exports = routeConfig;
 
 /***/ })
 /******/ ]);

@@ -4,7 +4,8 @@ var angular = require('angular');
 var route = require('angular-route');
 
 //Loader
-require('./home/home');
+require('./home/module');
+
 
 var app = angular.module('App', [
   'ngRoute',
@@ -12,3 +13,5 @@ var app = angular.module('App', [
 ]);
 
 require('./routes');
+
+module.exports = app;

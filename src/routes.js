@@ -1,12 +1,15 @@
-angular.module('App')
-  .config(
+'use strict';
+
+var routeConfig = angular.module('App').config(
     ['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', {
-        templateUrl: '../src/home/home.html',
-        controller: 'ctrl'
+        templateUrl: '../src/home/index.html',
+        controller: 'homeController'
       })
       .when('/view1',{
-        templateUrl: '../src/home/home.html',
-        controller: 'ctrl'
+        templateUrl: '../src/home/index.html',
+        controller: 'homeController'
       })
     }])
+
+module.exports = routeConfig;
