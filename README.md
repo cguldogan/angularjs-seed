@@ -4,7 +4,7 @@ Configured
 Webpack + ESLint + JsHint
 
 <p align="center">
-  <a href="https://webpack.js.org/ target="_blank"">
+  <a href="https://webpack.js.org" target="_blank"">
     <img alt="" src="http://freevector.co/wp-content/uploads/2014/04/webpack.png" width="80">
   </a>
   <a href="https://eslint.org/" target="_blank">
