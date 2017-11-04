@@ -1,7 +1,18 @@
 # angularjs-seed
 AngularJs Application Seed (Starter) Project
-Configured 
+
+Already Configured 
 Webpack + ESLint + JsHint
+
+NPM Commands
+---
+```
+npm run lint //  Run ESLint and JSHint
+npm run build // Run Webpack
+npm run jshint // If you just want to run jshint 
+npm run eslint // If you just want to run eslint 
+```
+
 
 <p align="center">
   <a href="https://webpack.js.org" target="_blank"">
