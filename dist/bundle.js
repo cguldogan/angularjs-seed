@@ -10345,7 +10345,7 @@ var app = angular.module('App', [
   'home'
 ]);
 
-__webpack_require__(17);
+__webpack_require__(18);
 
 module.exports = app;
 
@@ -54246,10 +54246,12 @@ module.exports = function (css) {
 
 "use strict";
 
-var homeController  = __webpack_require__(16);
+var homeFactory     = __webpack_require__(16);
+var homeController  = __webpack_require__(17);
 
 var homeModule = angular.module('home',[])
-.controller('homeController',['$scope',homeController]);
+                            .factory('homeFactory',homeFactory)
+                            .controller('homeController',homeController);
 
 module.exports = homeModule;
 
@@ -54260,16 +54262,41 @@ module.exports = homeModule;
 "use strict";
 
 
+function homeFactory(){
 
-function homeController($scope) {
+    var service = {
+        foo:foo
+    };
+
+
+    function foo() {
+        return 'foo';
+    }
+
+    return service;
+}
+
+module.exports = homeFactory;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+homeController.$inject=['$scope','homeFactory'];
+
+function homeController($scope,homeFactory) {
     var vm = $scope;
-    vm.myName = 'homeController';
+    vm.myController = 'homeController';
+    vm.myFactory = homeFactory.foo();
 }
 
 module.exports = homeController;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

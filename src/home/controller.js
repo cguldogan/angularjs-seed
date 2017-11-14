@@ -1,9 +1,11 @@
 'use strict';
 
+homeController.$inject=['$scope','homeFactory'];
 
-function homeController($scope) {
+function homeController($scope,homeFactory) {
     var vm = $scope;
-    vm.myName = 'homeController';
+    vm.myController = 'homeController';
+    vm.myFactory = homeFactory.foo();
 }
 
 module.exports = homeController;
