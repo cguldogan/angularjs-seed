@@ -1,6 +1,6 @@
 'use strict';
 
-homeController.$inject=['$scope','homeFactory'];
+homeController.$inject=['$scope','homeFactory']; //home factory injected to controller
 
 function homeController($scope,homeFactory) {
     var vm = $scope;

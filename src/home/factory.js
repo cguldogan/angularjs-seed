@@ -6,7 +6,6 @@ function homeFactory(){
         foo:foo
     };
 
-
     function foo() {
         return 'foo';
     }
