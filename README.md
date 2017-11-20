@@ -2,7 +2,7 @@
 AngularJs Application Seed (Starter) Project
 
 Already Configured 
-Webpack + ESLint + JsHint
+Bootstrap 4 + Webpack + ESLint + JsHint
 
 NPM Commands
 ---
@@ -13,8 +13,10 @@ npm run jshint // If you just want to run jshint
 npm run eslint // If you just want to run eslint 
 ```
 
-
 <p align="center">
+  <a href="https://getbootstrap.com/" target="_blank"">
+    <img alt="" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="80">
+  </a>
   <a href="https://webpack.js.org" target="_blank"">
     <img alt="" src="http://freevector.co/wp-content/uploads/2014/04/webpack.png" width="80">
   </a>
